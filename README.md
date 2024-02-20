@@ -16,7 +16,7 @@ Para realizar la verificación de los puntos de la prueba tenica se deben seguir
 
 - Despues de clonar el repositorio, ejecutar el comando ```composer update``` dentro de la carpeta del proyecto.
 
-- Cambiar la conexion a la base de datos en Postgresql en el archivo .env del proyecto. En este archivo se modifican las variables DB_HOST, DB_PORT, DB_DATABASE (db_venta fue el nombre asignado en la prueba), DB_USERNAME, DB_PASSWORD. Para la prueba tecnica se ha usado la herramiento pgAdmin y se administro la la base de datos con la herramiento DBeaver.
+- Cambiar la conexion a la base de datos en Postgresql en el archivo .env del proyecto. En este archivo se modifican las variables DB_HOST, DB_PORT, DB_DATABASE (`db_venta` fue el nombre asignado en la prueba), DB_USERNAME, DB_PASSWORD. Para la prueba tecnica se ha usado la herramiento pgAdmin y se administro la la base de datos con la herramiento DBeaver.
 
 - Generar la base de datos en la herramienta a usar.  Dentro del proyecto se agregó el archivo sql **dump-db_venta-202402200530.sql** con la estructura y datos iniciales para verificar la prueba tecnica.
 
