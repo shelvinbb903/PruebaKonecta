@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <h4 class="modal-title">Guardar Datos</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="cerrarVentana()"></button>
+</div>
+<div class="modal-body">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Nombre</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="producto.nombre" placeholder="" aria-label="" maxlength="128">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Referencia</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="producto.referencia" placeholder="" aria-label="">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Precio</span>
+        </div>
+        <input type="number" class="form-control" [(ngModel)]="producto.precio" placeholder="" aria-label="" min="0">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Peso</span>
+        </div>
+        <input type="number" class="form-control" [(ngModel)]="producto.peso" placeholder="" aria-label="" min="0">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Categoría</span>
+        </div>
+        <select class="form-control" [(ngModel)]="producto.categoria_id">
+          <option value="">Seleccione...</option>
+          <option [value]="item.id" *ngFor="let item of listado_categorias">{{ item.descripcion }}</option>
+        </select>
+        
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Stock</span>
+        </div>
+        <input type="number" class="form-control" [(ngModel)]="producto.stock" placeholder="" aria-label="" min="0">
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-warning" (click)="cerrarVentana()">Cancelar</button>
+    <button type="button" class="btn btn-success" (click)="guardarDatos()">Guardar</button>
+</div>

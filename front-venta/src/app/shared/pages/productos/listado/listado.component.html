@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="container text-end mt-2">
+    <button type="button" class="btn btn-success me-1 mb-3" (click)="abrirModalGuardarProducto()"><i class="fa-solid fa-add"></i> Registrar Producto</button>
+
+    <table class="table table-striped text-start">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Referencia</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>		
+            <tr *ngFor="let item of listado_productos">
+                <th scope="row">{{ item.nombre }}</th>
+                <td>{{ item.referencia }}</td>
+                <td>{{ item.precio | number }}</td>
+                <td>{{ item.stock | number }}</td>
+                <td>
+                    <button type="button" class="btn btn-warning me-1 btn-sm" (click)="abrirModalGuardarProducto('editar', item.id)"><i class="fa-solid fa-pen"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm" (click)="eliminarProducto(item.id)"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+

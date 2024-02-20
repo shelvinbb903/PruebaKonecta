@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container mt-3 text-end">
+    <button type="button" class="btn btn-success me-1 mb-3" (click)="abrirModalVentaActual()" [disabled]="ventaSer.detalle_venta_actual.length == 0"><i class="fa-solid fa-cart-shopping"></i> Venta Actual</button>
+
+    <div class="row text-start">
+        <div class="col-2 mt-2" *ngFor="let item of listado_productos">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.nombre }}</h5>
+                    <p class="card-text">{{ item.referencia }}</p>
+                    <p class="card-text">{{ item.precio | number }}</p>
+
+                    <div class="col-12 tex-end">
+
+                        <div class="input-group mb-3">                            
+                            <input type="number" class="form-control" placeholder="" aria-label="" [(ngModel)]="item.cantidad" min="0" [max]="item.stock">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-success" (click)="agregarProductoVenta(item)"><i class="fa-solid fa-add"></i></button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>        
+            </div>
+        </div>
+    </div>
+    
+</div>
+
